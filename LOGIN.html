@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>FitMe</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1 class="login_heading">Create Account</h1>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+        
+                <a href="home.html"><button class="sign-button">Sign Up</button></a>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1 class="login_heading">Sign In</h1>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+                <a href="home.html"><button class="sign-button">Sign In</button> </a>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Unlock Your Account!</h1>
+                    <p>Lorem Ipsum has been the industry's standard dummy text ever since</p>
+                    <button class="hidden" id="login">Sign In</button>
+
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Join us!</h1>
+                    <p>Lorem Ipsum has been the industry's standard dummy text ever since</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+    <script>
+        function saveData(){
+            let name,email,password;
+            name=document.getElementById("name").value;
+            email=document.getElementById("email").value;
+            password=document.getElementById("password").value;
+            console.log(name +" "+email+" "+password);
+        
+           // localStorage.setItem("name",name);
+           // localStorage.setItem("email",email);
+          //  localStorage.setItem("password",password);
+        
+          let user_records=new Array();
+          user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+          if(user_records.some((v)=>{
+            return v.email==email
+          })){
+            alert("Duplicate Data");
+          }
+          else{
+            user_records.push({
+                "name":name,
+                "email":email,
+                "password":password
+            })
+            localStorage.setItem("users",JSON.stringify(user_records))
+            window.location.href="home.html"
+          }
+         
+        }
+        function saveData(){
+            let name,email,password;
+            name=document.getElementById("name").value;
+            email=document.getElementById("email").value;
+            password=document.getElementById("password").value;
+            console.log(name +" "+email+" "+password);
+        
+           // localStorage.setItem("name",name);
+           // localStorage.setItem("email",email);
+          //  localStorage.setItem("password",password);
+        
+          let user_records=new Array();
+          user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+          if(user_records.some((v)=>{
+            return v.email==email && v.password == password
+          })){
+            alert("Login Successfull");
+            let current_user = user_records.filter((v)=>{
+              return v.email==email && v.password == password
+            })[0]
+        
+            localStorage.setItem("name",current_user.name);
+            localStorage.setItem("email",current_user.email);
+            window.location.href="home.html"
+          }
+          else{
+            alert("Login Fail")
+          }
+          }
+    </script>
+</body>
+
+</html>

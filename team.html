@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITME: Our Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Poppins;
+        }
+        .home-container{
+            width: 100%;
+            height: 65vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+        }
+        .profile-card{
+            position: relative;
+            width: 220px;
+            height: 220px;
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 50%;
+            box-shadow: -5px 8px 45px rgba(51, 51, 51, 0.126);
+            transition: all .4s;
+            margin: 0 20px;
+        }
+        .profile-card:hover{
+            border-radius: 10px;
+            width: 300px;
+            height: 400px;
+        }
+        .profile-card .img{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .profile-card:hover img{
+            border-radius: 10px;
+            transform: translateY(-50px);
+        }
+        .img img{
+            object-fit: fill;
+            width: 100%;
+            border-radius: 50%;
+            transition: all .4s;
+            z-index: 99;
+        }
+        .caption{
+            text-align: center;
+            transform: translateY(-110px);
+            opacity: 0;
+            pointer-events: none;
+            transition: all .5s;
+        }
+        .profile-card:hover .caption{
+            opacity: 1;
+            pointer-events: all;
+        }
+        .caption h3{
+            font-size: 21px;
+            background: linear-gradient(to right, #A50FFF, #E643FF);
+    background: linear-gradient(to right,);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+            font-weight: 600;
+        }
+        .caption p{
+            font-size: 15px;
+            font-weight: 500;
+            margin: 2px;
+            color: rgb(215, 215, 215);
+        }
+        .caption .social-links i{
+            font-size: 21px;
+            margin: 0 3px;
+            padding-top: 10px;
+            cursor: pointer;
+            color: #777777;
+            transition: all .4s;
+        }
+        .caption .social-links i:hover{
+            color: #A50FFF;
+        }
+        .heading{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 100px;
+            padding-bottom: 0px;
+        }
+        .heading h1{
+            font-size: 65px;
+        }
+        .heading h1 span{
+            background: linear-gradient(to right, #A50FFF, #E643FF);
+    background: linear-gradient(to right,);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1>Our <span>Team</span></h1>
+    </div>
+    <div class="home-container">
+        <div class="profile-card">
+            <div class="img">
+                <img src="assets/PHOTOS/ANGSHU.jpg">
+            </div>
+            <div class="caption">
+                <h3>Angshuman Rakshit</h3>
+                <p>UI/UX Designer and Developer</p>
+                <div class="social-links">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <div class="profile-card">
+            <div class="img">
+                <img src="assets/PHOTOS/pritam.jpg">
+            </div>
+            <div class="caption">
+                <h3>Pritam Das</h3>
+                <p>Front-end Developer</p>
+                <div class="social-links">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <div class="profile-card">
+            <div class="img">
+                <img src="assets/PHOTOS/sagnik.jpg">
+            </div>
+            <div class="caption">
+                <h3>Sagnik Dutta</h3>
+                <p>Back-end Developer</p>
+                <div class="social-links">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <div class="profile-card">
+            <div class="img">
+                <img src="assets/PHOTOS/priyanka.jpg">
+            </div>
+            <div class="caption">
+                <h3>Priyanka Ghosh</h3>
+                <p>UI/UX Designer</p>
+                <div class="social-links">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <div class="profile-card">
+            <div class="img">
+                <img src="assets/PHOTOS/ANIRBAN.jpg">
+            </div>
+            <div class="caption">
+                <h3>Anirban Basak</h3>
+                <p>Content Writer</p>
+                <div class="social-links">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
